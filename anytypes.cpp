@@ -108,6 +108,12 @@ AnyTypes& AnyTypes::operator=(AnyTypes&& right)
 	data = std::move(right.data);
 	return *this;
 }
+	
+void AnyTypes::Swap(AnyTypes& left, AnyTypes& right)
+{
+	std::swap(left.data, right.data);
+	std::swap(left.data_type, right.data_type);
+}
 
 const char* AnyTypes::get_type_name() const
 {
