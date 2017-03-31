@@ -76,7 +76,8 @@ public:
 
 	AnyTypes& operator=(const AnyTypes& right);
 	AnyTypes& operator=(AnyTypes&& right);
-
+	void Swap(AnyTypes& left, AnyTypesr& right);
+	
 	friend std::ostream& operator<<(std::ostream& out, const AnyTypes& target);
 	//Geters
 	const char* get_type_name() const;
