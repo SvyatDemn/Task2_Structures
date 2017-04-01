@@ -97,16 +97,22 @@ AnyTypes::~AnyTypes()
 
 AnyTypes& AnyTypes::operator=(const AnyTypes& right)
 {
+	if(this != &right)
+	{
 	data_type = right.data_type;
 	data = right.data;
 	return *this;
+	}
 }
 
 AnyTypes& AnyTypes::operator=(AnyTypes&& right)
 {
+	if(this != &right)
+	{
 	data_type = std::move(right.data_type);
 	data = std::move(right.data);
 	return *this;
+	}
 }
 	
 void AnyTypes::Swap(AnyTypes& left, AnyTypes& right)
