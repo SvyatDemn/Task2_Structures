@@ -90,7 +90,7 @@ AnyTypes::AnyTypes(long double ld) : data_type(Types::L_DOUBLE)
 	data.ld = ld;
 }
 
-AnyTypes::AnyTypes()
+AnyTypes::~AnyTypes()
 {
 	std::cout << "dector" << std::endl;
 }
