@@ -3,16 +3,12 @@
 namespace ISXTypesSpace
 {
 
-AnyTypes::AnyTypes(const AnyTypes& copy)
+AnyTypes::AnyTypes(const AnyTypes& copy): data_type(copy.data_type), data(copy.data)
 {
-	data_type = copy.data_type;
-	data = copy.data;
 }
 
-AnyTypes::AnyTypes(AnyTypes&& move)
+AnyTypes::AnyTypes(AnyTypes&& move): data_type(std::move(move.data_type)), data(std::move(move.data))
 {
-	this->data_type = std::move(move.data_type);
-	this->data = std::move(move.data);
 }
 
 AnyTypes::AnyTypes(bool b) : data_type(Types::BOOL)
@@ -101,8 +97,8 @@ AnyTypes& AnyTypes::operator=(const AnyTypes& right)
 	{
 	data_type = right.data_type;
 	data = right.data;
-	return *this;
 	}
+	return *this;
 }
 
 AnyTypes& AnyTypes::operator=(AnyTypes&& right)
@@ -111,8 +107,8 @@ AnyTypes& AnyTypes::operator=(AnyTypes&& right)
 	{
 	data_type = std::move(right.data_type);
 	data = std::move(right.data);
-	return *this;
 	}
+	return *this;
 }
 	
 void AnyTypes::Swap(AnyTypes& left, AnyTypes& right)
