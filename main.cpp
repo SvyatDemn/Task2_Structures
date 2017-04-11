@@ -5,7 +5,7 @@ using namespace ISXTypesSpace;
 
 int main()
 {
-	/*
+
 	AnyTypes obj1 = true;
 	std::cout << obj1 << std::endl;
 
@@ -23,5 +23,5 @@ int main()
 	{
 		std::cout << e.what() << std::endl;
 	}
-	*/
+
 }
